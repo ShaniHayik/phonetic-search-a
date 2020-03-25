@@ -10,31 +10,31 @@ using namespace std;
 namespace phonetic {
     const char *replacments['z' - 'a' + 1] =
             {
-                    "a",   //
-                    "bfp",  //
-                    "ckq",  //
-                    "dt", //
-                    "e",     //
-                    "fbp",  //
-                    "gj",   //
-                    "h",    //
-                    "iy",   //
-                    "jg",  //
-                    "kcq",  //
-                    "l",  //
-                    "m",  //
-                    "n",  //
+                    "a",
+                    "bfp",
+                    "ckq",
+                    "dt",
+                    "e",
+                    "fbp",
+                    "gj",
+                    "h",
+                    "iy",
+                    "jg",
+                    "kcq",
+                    "l",
+                    "m",
+                    "n",
                     "ou",
                     "pbf",
-                    "qck",  //
-                    "r",   //
+                    "qck",
+                    "r",
                     "sz",
-                    "td", //
+                    "td",
                     "uo",
-                    "vw", //
-                    "wv", //
-                    "x",  //
-                    "yi",   //
+                    "vw",
+                    "wv",
+                    "x",
+                    "yi",
                     "zs"
             };
 
@@ -70,7 +70,6 @@ namespace phonetic {
             }
                 if(searchWordFound)
                 {
-                    //return text.substr(i, word.length());
                     std::string ans=text.substr(i, word.length());
                     if((text[i-1]==' ' && text[i+word.length()]==' ' ) || (text[i-1]==' ' && (i+word.length())==text.length())
                        || (compare_chars(text[0], word[0]) && (text[word.length()]==' ')) || ((text[0]==word[0]) && (text.length()==word.length())))
@@ -78,17 +77,10 @@ namespace phonetic {
                         return text.substr(i, word.length());
                     }
                 }
-
-//                if ((((i > 0) && (text[i - 1] == ' ')) || i == 0)
-//                    && (((i + word.length() - 1 < text.length() - 1) && (text[i + word.length()] == ' ')) ||
-//                        (i + word.length() - 1 == text.length() - 1))) {
-//                    return text.substr(i, word.length());
-//                }
             }
 
             throw std::out_of_range{"The word: " + word +" didn't find at the text"};
-
         }
-        //throw string("the word didnt find");
+
     }
 
